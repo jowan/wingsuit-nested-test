@@ -30,33 +30,33 @@ nested_parent:
       label: "Happy children"
       fields:
         child_a:
-          id: 'nested_child_a'
+          id: 'nested_child'
           fields:
             text: "I am happy"
         child_b:
-          id: 'nested_child_b'
+          id: 'nested_child'
           fields:
             text: "I am happy too"
     sad_children:
       label: "Sad children"
       fields:
         child_a:
-          id: 'nested_child_a'
+          id: 'nested_child'
           fields:
             text: "I'm so sad"
         child_b:
-          id: 'nested_child_b'
+          id: 'nested_child'
           fields:
             text: "Yeh, me too :("
 
-nested_parent_example:
+nested_grand_parent:
   namespace: "Templates/Tests"
-  use: "@templates/tests/_parent_example.twig"
+  use: "@templates/tests/_grand_parent.twig"
   label: Grand parent
   fields:
-    children:
+    parent:
       type: pattern
-      label: 'Children'
+      label: 'Parent'
       preview:
         id: 'nested_parent'
   variants:
@@ -65,20 +65,20 @@ nested_parent_example:
     happy_grand_children:
       label: "Happy grand children"
       fields:
-        children:
+        parent:
           id: 'nested_parent'
           variant: 'happy_children'
     blue_grand_children:
       label: "Blue grand children"
       fields:
-        children:
+        parent:
           id: 'nested_parent'
           fields:
             child_a:
-              id: 'nested_child_a'
+              id: 'nested_child'
               fields:
                 text: "I'm am blue"
             child_b:
-              id: 'nested_child_b'
+              id: 'nested_child'
               fields:
                 text: "Soo blue"
