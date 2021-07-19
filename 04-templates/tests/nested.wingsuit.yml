@@ -62,6 +62,12 @@ nested_parent_example:
   variants:
     __default:
       label: "Default"
+    happy_grand_children:
+      label: "Happy grand children"
+      fields:
+        children:
+          id: 'nested_parent'
+          variant: 'happy_children'
     blue_grand_children:
       label: "Blue grand children"
       fields:
